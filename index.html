@@ -2,10 +2,22 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>blog tomi</title>
   <link rel="stylesheet" href="estilo.css">
+  <style>
+    /* el "lienzo": todas las posiciones se miden desde esta caja y no desde la pantalla */
+    body { margin: 0; }
+    .lienzo {
+      position: relative;
+      width: 1900px;
+      height: 2720px;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
+<div class="lienzo">
 
 <img src="imagenes/name3.gif" style="position: absolute; top: 120px; right: 590px; width: 700px; z-index: 1; ">
 
@@ -22,7 +34,7 @@
      y no podia quedarme atras!!! <br>
      dibujo de mi hecho por ella (GRAN ARTISTA) ---------><br>
      <small>PD: hola emelimary te quede muy lindo</small>
-  </p> 
+  </p>
 </div>
 
 <div class="bloque" style="position: absolute; top: 550px; right: 625px;">
@@ -38,15 +50,15 @@
     yy ya creo q eso es todo de mi...<br>
     mi discord: tomi19r5h<br>
      <small>       </small>
-     
-  </p> 
+
+  </p>
 </div>
 
 <img src="imagenes/flowery2.gif" style="position: absolute; top: 680px; right: 250px; width: 200px; z-index: 1; cursor: pointer;" onclick="document.getElementById('JARONA').play()">
 <audio id="JARONA" src="audio/jarona2.mp3"></audio>
 
 
-<img src="imagenes/sneasel.gif" style="position: absolute; top: 280px; right: 1400px; width: 200px; z-index: 1; cursor: pointer;" onclick="document.getElementById('SNEASEL').play()">>
+<img src="imagenes/sneasel.gif" style="position: absolute; top: 280px; right: 1400px; width: 200px; z-index: 1; cursor: pointer;" onclick="document.getElementById('SNEASEL').play()">
 <audio id="SNEASEL" src="audio/sneasel2.mp3"></audio>
 
 
@@ -68,8 +80,8 @@
      <small>↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓</small> <br>
     <a href="https://r5wh4t3r.straw.page/" target="_blank">GF WEBSITE HERE!!!!</a><br>
      <small>↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑</small>
-     
-  </p> 
+
+  </p>
 </div>
 
 <img src="imagenes/mary3.png" style="position: absolute; top: 1480px; right: 960px; width: 300px; z-index: 1; ">
@@ -80,12 +92,22 @@
 <img src="imagenes/tvkiss.png" style="position: absolute; top: 1780px; right: 550px; width: 400px; z-index: 1; ">
 
 
-
-</body>
-</html>
-
 <p style="font-family: 'Courier New', monospace; color: #998eff; font-size: 24px; position: absolute; top: 2600px; right: 650px;">
 © 2026 - todos los derechos reservados ☆☆☆<br>
-                                            <br>
-<br>
 </p>
+
+</div>
+
+<script>
+  // Achica el lienzo completo para que quepa en pantallas chicas (celular),
+  // como si fuera una foto de la pagina: todo queda en el mismo lugar.
+  function ajustarLienzo() {
+    var lienzo = document.querySelector('.lienzo');
+    var escala = Math.min(1, document.documentElement.clientWidth / 1900);
+    lienzo.style.zoom = escala;
+  }
+  ajustarLienzo();
+  window.addEventListener('resize', ajustarLienzo);
+</script>
+</body>
+</html>
